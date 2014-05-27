@@ -42,7 +42,7 @@ ws.onmessage = function(event) {
         gain = 0;
       }
       if(0 < gain){
-        vinclu_led.setBrightness(gain);
+        //vinclu_led.setBrightness(gain);
       }
     }
     //グラフの表示
