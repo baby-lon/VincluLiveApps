@@ -1,27 +1,40 @@
 <!doctype html>
 <html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<title>Vinclu</title>
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/vincluled.js"></script>
-	<script type="text/javascript" src="js/audience.js"></script>
-	<script type="text/javascript" src="js/client.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			vinclu_led = new VincluLed(100,100);
-			vinclu_led.init();
-			//読み込み完了時に行う処理
-			$('#btnStart').click(function(){
-				vinclu_led.on();
-				vinclu_led.off();
-			});
-			is_init = true;
-		});
-	</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="ウィンクルLIVE" />
+  <meta name="keywords" content="ウィンクル, アプセサリー, ロマンチック, 鳥, ライブ" />
+  <meta name="author" content="ウィンクル" />
+  <meta name="copyright" content="Copyright (C) vinclu.me" />
+
+  <!-- CSS -->    
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/vinclu_live.css" rel="stylesheet">
+  
+  <!-- webフォント -->
+  <link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/vincluled.js"></script>
+  <script type="text/javascript" src="js/audience.js"></script>
+  <script type="text/javascript" src="js/client.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      vinclu_led = new VincluLed(100,100);
+      vinclu_led.init();
+      //読み込み完了時に行う処理
+      $('#btnStart').click(function(){
+        vinclu_led.on();
+        vinclu_led.off();
+      });
+      is_init = true;
+    });
+  </script>
 </head>
 <body>
-   <input type='button' value='開始' id='btnStart' class='btn'>
-   <div id="message_area"></div>
+  <div class="container text-center">
+   <input type="button" value="開始" id="btnStart" class="btn">
+  </div>
 </body>
 </html>
