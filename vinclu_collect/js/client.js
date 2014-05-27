@@ -16,7 +16,7 @@ ws.onmessage = function(event) {
   var parse_data = $.parseJSON(event.data);
   var cnt = parseInt(parse_data.count);
   var th = parseInt(parse_data.threshold);
-  $('#message_area').text(cnt + ', ' + th);
+// $('#message_area').text(cnt + ', ' + th);
 
   if(th <= cnt){
     if(is_blink == false && vinclu_led != null){
@@ -46,10 +46,11 @@ ws.onmessage = function(event) {
       }
     }
     //グラフの表示
-    var max_height = 300;
+    var max_height = document.documentElement.clientHeight-70;
     var h = (cnt / th) * max_height;
     var padd = max_height - h;
     var duration = '0.3s';
+
     $('#graph_area').css({
       height: h + 'px',
       marginTop: padd + 'px',

@@ -1,9 +1,16 @@
 body{
-	background: -webkit-gradient(linear, left top, left bottom, from(#aadad8), to(#00b5c3));
+/*	background: -webkit-gradient(linear, left top, left bottom, from(#aadad8), to(#00b5c3));*/
 }
 .graph{
-	width:100%;
+	width:70%;
+
 	height: 0px;
-	margin-top: 300px;
-	background: #0000ff;
+	margin-top: 2000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	background: #80d5ff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }

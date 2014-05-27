@@ -11,3 +11,13 @@ body {
     color: #fff;
     background:#80d5ff;
 }
+
+.input-xlarge{
+    margin: 0px 0px 10px 0px;
+    font-size:30px;
+    width:100%;
+}
+
+.txt_area{
+	margin-top: 30px;
+}
