@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Vincluの元気玉</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/vincluled.js"></script>
+	<script type="text/javascript" src="js/audience.js"></script>
+	<script type="text/javascript" src="js/client.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			vinclu_led = new VincluLed(100,100);
+			vinclu_led.init();
+			//読み込み完了時に行う処理
+			$('#btnStart').click(function(){
+				vinclu_led.on();
+				vinclu_led.off();
+			});
+			is_init = true;
+
+			var accel_remain = 5;//規定値を超えても許容する更新回数
+			var light_count = 0;
+		    var accel_threshold = 8.0;
+		    var is_down = false;
+		    var is_up = false;
+		    var shake_count = 0;
+		    var send_timing = 50;
+
+			vinclu_led = new VincluLed(100,100);
+			vinclu_led.init();
+			//読み込み完了時に行う処理
+			$('#btnShake').click(function(event) {
+				ws.send('shake');
+			});
+
+			$('#btnStart').click(function(){
+				vinclu_led.on();
+				vinclu_led.off();
+			});
+
+			window.addEventListener("devicemotion", function(event){
+
+			    //加速度
+			    var x = event.acceleration.x;
+			    var y = event.acceleration.y;
+			    var z = event.acceleration.z;
+
+			    if(accel_threshold < y){
+			    	is_up = true;
+			    	light_count = accel_remain;
+				}
+				if(y < accel_threshold * (-1.0)){
+					is_down = true;
+					light_count = accel_remain;
+				}
+				if(is_up == true && is_down == true){
+					shake_count++;
+				}
+				if(shake_count % send_timing == send_timing -1){
+					ws.send('shake');
+				}
+
+				light_count--;
+				if(light_count == 0){
+				    is_down = false;
+				    is_up = false;
+				}
+
+			    var txt  = "x:"+x+"<br>";
+			        txt += "y:"+y+"<br>";
+			        txt += "z:"+z+"<br>";
+			        txt += "shake:"+shake_count+"<br>";
+
+			    //console.log(txt);
+			    $('#shake_area').html(txt);
+			}, true);
+		});
+	</script>
+</head>
+<body>
+   <input type='button' value='シェイク' id='btnShake' class='btn'>
+   <input type='button' value='光らせる' id='btnStart' class='btn'>
+   <div id="shake_area"></div>
+   <div id="message_area"></div>
+   <div id="graph_area" class="graph"></div>
+
+</body>
+</html>
