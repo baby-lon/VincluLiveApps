@@ -1,0 +1,17 @@
+body {
+  font: 30px sans-serif;
+  background: #1e2936;
+  color:#fff;
+}
+
+.btn{
+    margin: 0px;
+    font-size:30px;
+    width:100%;
+    color: #fff;
+    background:#80d5ff;
+}
+
+.image_area{
+	margin-bottom: 20%;
+}
