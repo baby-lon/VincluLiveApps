@@ -17,30 +17,30 @@
   <!-- webフォント -->
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
 
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/vincluled.js"></script>
-	<script type="text/javascript" src="js/audience.js"></script>
-	<script type="text/javascript" src="js/motion.js"></script>
-	<script type="text/javascript">
-	(function init_graph(){
-			//↓これをwebsocketが来る前にやりたい
-	    $('#graph_area').css({
-	      height: '0px',
-	      marginTop: (document.documentElement.clientHeight-70) + 'px'
-	  	});
-	})();
-	</script>
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/vincluled.js"></script>
+  <script type="text/javascript" src="js/audience.js"></script>
+  <script type="text/javascript" src="js/motion.js"></script>
 </head>
 <body>
-  <div class="container text-center">
-   <div id="shake_area"></div>
-   <div id="orientation_area"></div>
-   <!-- <input type="button" value="開始" id="btnStart" class="btn"> -->
-   <input type="button" value="ゆったり(左右に)" id="btnSlow" class="btn">
-   <input type="button" value="激しく(前後に)" id="btnHard" class="btn">
-   <div id="message_area">モードを選んで下さい</div>
-   <img src="./images/page_image1.jpg" alt="" width="320" height="568" />
+  <div class="container text-center main_container">
+     <img src="./images/dark_tori.png" alt="" width="60" height="38" /><br/>
+    <!-- <div id="shake_area"></div> -->
+    <!-- <div id="orientation_area"></div> -->
+    <!-- <input type="button" value="開始" id="btnStart" class="btn"> -->
+    <div class="eye_catch">
+        <img src="./images/shake_your_phone.png" alt="" width="225" height="120" />
+        <br><br>
+        <input type="button" value="CLICK TO START" id="btnSlow" class="btn">
+        <!-- <div id="message_area"></div> -->
+    </div>
   </div>
+  <nav class="text-center bottom_navi">
+    <a href="./"><img src="./images/btn_motion_sel.png" alt="" width="60" height="71" /></a>
+    <a href="../vinclu_shake/"><img src="./images/btn_synpathy.png" alt="" width="60" height="71" /></a>
+    <a href="../vinclu_collect/"><img src="./images/btn_graph.png" alt="" width="60" height="71" /></a>
+    <a href="./"><img src="./images/btn_roulette.png" alt="" width="60" height="71" /></a>
+  </nav>
 
 </body>
 </html>

@@ -4,10 +4,32 @@ body {
   color:#fff;
 }
 
+.container{
+  height: 420px;
+}
+
+.main_container{
+  margin-top: 20px;
+}
 .btn{
-    margin: 0px;
     font-size:30px;
     width:100%;
     color: #fff;
     background:#80d5ff;
+}
+
+.bottom_navi{
+	letter-spacing: 6px;
+	margin-bottom:15px;
+}
+
+.eye_catch{
+  margin-top: 50px;
+  vertical-align: bottom;
+  line-height: 10px;
+}
+
+.btn_to_leader
+{
+  background-color: #FF9100;
 }
