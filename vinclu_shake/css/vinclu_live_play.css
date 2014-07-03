@@ -5,10 +5,10 @@ body {
 }
 
 .main_container{
-	margin-top: 20px;
+	margin-top: 30px;
 }
 .btn{
-    font-size:20px;
+    font-size:30px;
     width:100%;
     color: #fff;
     background:#80d5ff;
@@ -21,10 +21,16 @@ body {
 }
 
 .eye_catch{
-  margin-top: 90px;
+  margin-top: 30px;
   vertical-align: bottom;
 }
 
 .container{
   height: 400px;
+}
+
+.btn_back
+{
+  background-color: #FFFFFF;
+  color: #000;
 }
