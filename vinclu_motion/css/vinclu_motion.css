@@ -5,13 +5,23 @@ body {
 }
 
 .btn{
-    margin: 0px;
     font-size:30px;
     width:100%;
     color: #fff;
     background:#80d5ff;
 }
 
-.image_area{
-	margin-bottom: 20%;
+.bottom_navi{
+	letter-spacing: 6px;
+	margin-bottom:15px;
+}
+
+.eye_catch{
+  margin-top: 70px;
+  vertical-align: bottom;
+  line-height: 10px;
+}
+
+.container{
+  height: 420px;
 }

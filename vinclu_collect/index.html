@@ -11,7 +11,7 @@
 
   <!-- CSS -->    
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/vinclu_live_play.css" rel="stylesheet">
+  <link href="css/vinclu_graph.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet" type="text/css">
 
   <!-- webフォント -->
@@ -25,8 +25,9 @@
 			//↓これをwebsocketが来る前にやりたい
 	    $('#graph_area').css({
 	      height: '0px',
-	      marginTop: (document.documentElement.clientHeight-70) + 'px'
+	      top: 306 + 'px',
 	  	});
+	  	ajust_graph();
 	})();
 	</script>
 	<script type="text/javascript" src="js/client.js"></script>
@@ -37,8 +38,12 @@
 			//読み込み完了時に行う処理
 			$('#btnStart').click(function(){
 				vinclu_led.on();
-				vinclu_led.off();
+				setTimeout(function(){
+					vinclu_led.off();
+				},100);
 			});
+
+			ajust_graph();
 			is_init = true;
 
 			var accel_remain = 5;//規定値を超えても許容する更新回数
@@ -101,11 +106,20 @@
 	</script>
 </head>
 <body>
-   <div id="shake_area"></div>
-  <div class="container text-center">
-   <input type="button" value="開始" id="btnStart" class="btn">
-   <div id="graph_area" class="graph"></div>
+   <!-- <div id="shake_area"></div> -->
+  <div class="container text-center main_container">
+    <img src="./images/dark_tori.png" alt="" width="60" height="38" /><br/>
+    <div class="eye_catch">
+      <img src="./images/shake_with_all.png" alt="" width="318" height="357" />
+      <input type="button" value="CLICK TO START" id="btnStart" class="btn">
+    </div>
   </div>
-
+  <nav class="text-center bottom_navi">
+    <a href="../vinclu_motion/"><img src="./images/btn_motion.png" alt="" width="60" height="71" /></a>
+    <a href="../vinclu_shake/"><img src="./images/btn_synpathy.png" alt="" width="60" height="71" /></a>
+    <a href="./"><img src="./images/btn_graph_sel.png" alt="" width="60" height="71" /></a>
+    <a href="./"><img src="./images/btn_roulette.png" alt="" width="60" height="71" /></a>
+  </nav>
+  <div id="graph_area" class="graph"></div>
 </body>
 </html>

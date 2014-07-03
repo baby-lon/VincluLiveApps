@@ -12,6 +12,17 @@ body {
     background:#80d5ff;
 }
 
-.image_area{
-	margin-bottom: 20%;
+.bottom_navi{
+	letter-spacing: 6px;
+	margin-bottom:15px;
+}
+
+.eye_catch{
+  margin-top: 0px;
+  vertical-align: bottom;
+  line-height: 10px;
+}
+
+.container{
+  height: 700px;
 }

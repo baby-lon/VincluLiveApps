@@ -35,7 +35,7 @@
 				$('#message_area').text("ゆっくりモード");
 				motion_mode = 1;
 			});				
-			$('#btnHard').click(function(){
+/*			$('#btnHard').click(function(){
 				vinclu_led.on();
 		        vinclu_led.setBrightness(-0.0);
 				setTimeout(function(){
@@ -43,7 +43,7 @@
 				},100);	
 				$("#message_area").text("激しくモード");
 				motion_mode = 2;
-			});				
+			});*/
 
 			window.addEventListener("devicemotion", function(event){
 

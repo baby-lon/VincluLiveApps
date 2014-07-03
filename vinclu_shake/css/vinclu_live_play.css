@@ -1,17 +1,30 @@
 body {
-  font: 30px sans-serif;
+  font: 20px sans-serif;
   background: #1e2936;
   color:#fff;
 }
 
+.main_container{
+	margin-top: 20px;
+}
 .btn{
-    margin: 0px;
-    font-size:30px;
+    font-size:20px;
     width:100%;
     color: #fff;
     background:#80d5ff;
 }
 
-.image_area{
-	margin-bottom: 20%;
+
+.bottom_navi{
+	letter-spacing: 6px;
+	margin-bottom:15px;
+}
+
+.eye_catch{
+  margin-top: 90px;
+  vertical-align: bottom;
+}
+
+.container{
+  height: 400px;
 }
