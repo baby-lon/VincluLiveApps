@@ -26,8 +26,20 @@
       //読み込み完了時に行う処理
       $('#btnStart').click(function(){
         vinclu_led.on();
-        vinclu_led.off();
+        setTimeout(function(){
+          vinclu_led.off();
+        },100);
       });
+      $("#close").click(function() {
+          $("#overlay").fadeOut();
+          vinclu_led.on();
+              vinclu_led.setBrightness(-0.0);
+          setTimeout(function(){
+            vinclu_led.off();
+          },100); 
+
+       });
+
       is_init = true;
     });
   </script>
@@ -39,16 +51,18 @@
     <div class="eye_catch">
       <img src="./images/wait_leaders_motion.png" alt="" width="240" height="122" />
       <br><br>
-      <input type="button" value="CLICK TO START" id="btnStart" class="btn">
+      <!-- <input type="button" value="CLICK TO START" id="btnStart" class="btn"> -->
       <br><br>
       <input type="button" value="LEADER >" id="btnToLeader" class="btn btn_to_leader" onclick="location.href='./idol.html';">
     </div>
   </div>
   <nav class="text-center bottom_navi">
-    <a href="../vinclu_motion/"><img src="./images/btn_motion.png" alt="" width="60" height="71" /></a>
+    <a href="../vinclu_motion/index.html"><img src="./images/btn_motion.png" alt="" width="60" height="71" /></a>
     <a href="./"><img src="./images/btn_synpathy_sel.png" alt="" width="60" height="71" /></a>
-    <a href="../vinclu_collect/"><img src="./images/btn_graph.png" alt="" width="60" height="71" /></a>
+    <a href="../vinclu_collect/index.html"><img src="./images/btn_graph.png" alt="" width="60" height="71" /></a>
     <a href="./"><img src="./images/btn_roulette.png" alt="" width="60" height="71" /></a>
   </nav>
+  <div id="overlay">
+   <p id="close"><img src="./images/dlg_synpathy.png" alt="" width="258" height="311" /></p>
 </body>
 </html>

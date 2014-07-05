@@ -34,7 +34,6 @@ ws.onmessage = function(event) {
     is_blink = false;
     
     //グラフに合わせて明るさが変わる(未実装)
-    //todo -0.35 ~ 0.0の間で変動するようにすればよい
     if(vinclu_led != null){
       var blight_max = 1.0;
       var gain = ((cnt / th) - 0.5) * blight_max;
