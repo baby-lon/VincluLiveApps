@@ -31,79 +31,7 @@
 	})();
 	</script>
 	<script type="text/javascript" src="js/client.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			vinclu_led = new VincluLed(100,100);
-			vinclu_led.init();
-			//読み込み完了時に行う処理
-			$('#btnStart').click(function(){
-				vinclu_led.on();
-				setTimeout(function(){
-					vinclu_led.off();
-				},100);
-			});
-
-			ajust_graph();
-			is_init = true;
-
-			var accel_remain = 5;//規定値を超えても許容する更新回数
-			var light_count = 0;
-		    var accel_threshold = 8.0;
-		    var is_down = false;
-		    var is_up = false;
-		    var shake_count = 0;
-		    var send_timing = 50;
-
-			vinclu_led = new VincluLed(100,100);
-			vinclu_led.init();
-			//読み込み完了時に行う処理
-			$('#btnShake').click(function(event) {
-				ws.send('shake');
-			});
-
-			$('#btnStart').click(function(){
-				vinclu_led.on();
-				vinclu_led.off();
-			});
-
-			window.addEventListener("devicemotion", function(event){
-
-			    //加速度
-			    var x = event.acceleration.x;
-			    var y = event.acceleration.y;
-			    var z = event.acceleration.z;
-
-			    if(accel_threshold < y){
-			    	is_up = true;
-			    	light_count = accel_remain;
-				}
-				if(y < accel_threshold * (-1.0)){
-					is_down = true;
-					light_count = accel_remain;
-				}
-				if(is_up == true && is_down == true){
-					shake_count++;
-				}
-				if(shake_count % send_timing == send_timing -1){
-					ws.send('shake');
-				}
-
-				light_count--;
-				if(light_count == 0){
-				    is_down = false;
-				    is_up = false;
-				}
-
-			    /*var txt  = "x:"+x+"<br>";
-			        txt += "y:"+y+"<br>";
-			        txt += "z:"+z+"<br>";
-			        txt += "shake:"+shake_count+"<br>";*/
-
-			    //console.log(txt);
-			    //$('#shake_area').html(txt);
-			}, true);
-		});
-	</script>
+	<script type="text/javascript" src="js/graph.js"></script>
 </head>
 <body>
    <!-- <div id="shake_area"></div> -->
@@ -111,7 +39,7 @@
     <img src="./images/dark_tori.png" alt="" width="60" height="38" /><br/>
     <div class="eye_catch">
       <img src="./images/shake_with_all.png" alt="" width="318" height="357" />
-      <input type="button" value="CLICK TO START" id="btnStart" class="btn">
+      <!-- <input type="button" value="CLICK TO START" id="btnStart" class="btn"> -->
     </div>
   </div>
   <nav class="text-center bottom_navi">
@@ -121,5 +49,8 @@
     <a href="./"><img src="./images/btn_roulette.png" alt="" width="60" height="71" /></a>
   </nav>
   <div id="graph_area" class="graph"></div>
+  <div id="overlay">
+    <p id="close"><img src="./images/dlg_graph.png" alt="" width="258" height="311" /></p>
+  </div>
 </body>
 </html>
