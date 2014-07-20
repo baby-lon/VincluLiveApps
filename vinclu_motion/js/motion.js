@@ -7,6 +7,16 @@
 				vinclu_led.on();
 				vinclu_led.off();
 			});
+
+			$("#close").click(function() {
+			    $("#overlay").fadeOut();　/*ふわっと消える*/
+				vinclu_led.on();
+		        vinclu_led.setBrightness(-0.0);
+				setTimeout(function(){
+					vinclu_led.off();
+				},100);	
+				motion_mode = 1;
+			 });
 			is_init = true;
 
 			var sample_count = 3;
